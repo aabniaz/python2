@@ -7,6 +7,5 @@ def counting(s):
         else:
             char_count[char] = 1
     return char_count
-
 print(counting(s))
 
