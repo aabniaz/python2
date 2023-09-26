@@ -15,4 +15,3 @@ for i, string in enumerate(L, start=1):
     if match:
         strr.append(i)
 print(strr)
-

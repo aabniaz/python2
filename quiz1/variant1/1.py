@@ -8,6 +8,3 @@ for i in range(0, len(l1)):
         l2_new.append(l1[i]) 
 for x in (l1_new + l2_new):
     print(x, end='')
-
-
-

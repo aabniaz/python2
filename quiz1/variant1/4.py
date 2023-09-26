@@ -34,4 +34,3 @@ phone_n = '301-' + phone_number[0:]
 result = first_n + ' ' + last_n + ' ' + strr[11:-9] + ' ' + phone_n
 with open('output.txt', 'w') as file:
     file.write(result)
-
