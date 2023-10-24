@@ -2,7 +2,6 @@ import tkinter as tk
 from math import *
 
 convert_constant = 1
-inverse_convert_constant = 1
 
 btn_params = {
     'padx': 16, 'pady': 1, 'bd': 4, 'fg': 'white', 'bg': 'black',
