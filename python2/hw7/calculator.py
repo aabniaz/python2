@@ -1,19 +1,17 @@
 import tkinter as tk
 from math import *
 
-convert_constant = 1
-
 btn_params = {
     'padx': 16, 'pady': 1, 'bd': 4, 'fg': 'white', 'bg': 'black',
     'font': ('arial', 18), 'width': 2, 'height': 2, 'relief': 'flat', 'activebackground': "black"
 }
 
 def fsin(arg):
-    return sin(arg * convert_constant)
+    return sin(arg) 
 def fcos(arg):
-    return cos(arg * convert_constant)
+    return cos(arg)  
 def ftan(arg):
-    return tan(arg * convert_constant)
+    return tan(arg) 
 
 class Calculator:
     def __init__(self, master):
@@ -31,10 +29,10 @@ class Calculator:
         txt_display.pack()
 
         buttons = [
-            ('C', '+/-', 'sqrt', '%', '7', '8', '9', '/'),
-            ('sin', 'cos', 'tan', 'log', '4', '5', '6', '*'),
-            ('1/x', 'x^2', 'x^y', 'n!', '1', '2', '3', '-'),
-            ('(', ')', 'exp', 'π', '0', '.', '=', '+')
+            ('C', '+/-', '√', '%', '7', '8', '9', '/'),
+            ('sin', 'cos', 'tan', 'ln', '4', '5', '6', '*'),
+            ('1/x', 'х²', 'xʸ', 'n!', '1', '2', '3', '-'),
+            ('(', ')', 'e', 'π', '0', '.', '=', '+')
         ]
 
         for i, button_row in enumerate(buttons):
@@ -46,22 +44,22 @@ class Calculator:
                     command = lambda btn='fcos(': self.btn_click(btn)
                 elif button_text == 'tan':
                     command = lambda btn='ftan(': self.btn_click(btn)
-                elif button_text == 'log':
-                    command = lambda btn='log(': self.btn_click(btn)
+                elif button_text == 'ln':
+                    command = lambda btn='ln': self.btn_click(btn)
                 elif button_text == '1/x':
                     command = lambda btn='1/(': self.btn_click(btn)
-                elif button_text == 'x^2':
+                elif button_text == 'х²':
                     command = lambda btn='**2': self.btn_click(btn)
-                elif button_text == 'x^y':
+                elif button_text == 'xʸ':
                     command = lambda btn='**': self.btn_click(btn)
                 elif button_text == 'n!':
                     command = lambda btn='factorial(': self.btn_click(btn)
-                elif button_text == 'exp':
-                    command = lambda btn='exp(': self.btn_click(btn)
+                elif button_text == 'e':
+                    command = lambda btn='e(': self.btn_click(btn)
                 elif button_text == 'π':
                     command = lambda btn='pi': self.btn_click(btn)
-                elif button_text == 'sqrt':
-                    command = lambda btn='sqrt(': self.btn_click(btn)
+                elif button_text == '√':
+                    command = lambda btn='√(': self.btn_click(btn)
                 elif button_text == '%':
                     command = lambda btn='%(': self.btn_click(btn)
 
@@ -73,6 +71,40 @@ class Calculator:
 
     def btn_click(self, item):
         if item == "=":
+            try:
+                self.expression = str(eval(self.expression))
+            except:
+                self.expression = "Error"
+            self.text_input.set(self.expression)
+        elif item == 'sin':
+            try:
+                result = fsin(float(self.expression))
+                self.expression = str(result)
+            except:
+                self.expression = "Error"
+            self.text_input.set(self.expression)
+        elif item == 'cos':
+            try:
+                result = fcos(float(self.expression))
+                self.expression = str(result)
+            except:
+                self.expression = "Error"
+            self.text_input.set(self.expression)
+        elif item == 'tan':
+            try:
+                result = ftan(float(self.expression))
+                self.expression = str(result)
+            except:
+                self.expression = "Error"
+            self.text_input.set(self.expression)
+        elif item == 'ln':
+            try:
+                result = log(float(self.expression)) 
+                self.expression = str(result)
+            except:
+                self.expression = "Error"
+            self.text_input.set(self.expression)
+        elif item == "=":
             try:
                 self.expression = str(eval(self.expression))
             except:
