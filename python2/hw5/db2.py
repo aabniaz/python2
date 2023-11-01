@@ -144,3 +144,4 @@ exit_button = tk.Button(root, text="Exit", command=root.destroy)
 exit_button.pack()
 
 root.mainloop()
+#not everything works
