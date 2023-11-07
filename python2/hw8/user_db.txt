@@ -1,0 +1,1 @@
+{"Alua": "alua", "Jandaulet": "jandaulet",  "Ali": "ali", 'Aisha': 'aisha', "Madi": "Madi$1", "Akon": "Akon@1", "Akonai": "Akon@1", 'asik': 'A$111k', }
