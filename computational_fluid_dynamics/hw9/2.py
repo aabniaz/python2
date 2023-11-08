@@ -11,7 +11,7 @@ T = np.zeros((nx, ny))
 T[0, :] = 1
 T[-1, :] = 0
 T[:, 0] = 0
-T[:, -1] = 0
+T[:, -1] = 0 
 
 max_iterations = 10000
 tolerance = 1e-5
